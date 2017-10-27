@@ -2,9 +2,16 @@ require "./food"
 require "./meal"
 require "./day"
 require "./month"
+require "./exercise"
+require "./activity"
 
 scrambled_eggs = Food.new("Scrambled Eggs", "1 egg", 100)
 bacon = Food.new("Bacon", "3 slices", 100)
+
+workout = Activity.new("Workout")
+workout.add_exercise(Exercise.new("Jogging", 300), 30)
+workout.add_exercise(Exercise.new("Yoga", 240), 20)
+workout.add_exercise(Exercise.new("Weightlifting", 266), 45)
 
 breakfast = Meal.new("Breakfast")
 breakfast.add_food(scrambled_eggs, 3)
@@ -12,7 +19,6 @@ breakfast.add_food(bacon, 2)
 breakfast.add_food(Food.new("Cereal", "1 oz", 135), 2)
 breakfast.add_food(Food.new("Milk", "1 cup", 125), 1)
 breakfast.add_food(Food.new("Orange Juice", "1 cup", 110), 1)
-
 
 lunch = Meal.new("Lunch")
 lunch.add_food(Food.new("Roast Beef Sandwich", "1 sandwich", 345), 1)
@@ -42,10 +48,13 @@ monday.add_meal(lunch)
 monday.add_meal(dinner)
 monday.add_meal(snacks)
 
-month1 = Month.new("January")
+month1 = Month.new("January", monday.total_calories, 2000)
 
-puts "In January he gained #{month1.weight_gained(monday.total_calories)} lbs"
+puts "He gained #{month1.weight_gained} lbs in 1 month"
 
 puts "Total daily calories: #{monday.total_calories}"
 
 puts "Did he meet his goal: #{monday.met_goal?}"
+
+puts "He burned #{workout.total_calories_burned} calories"
+
