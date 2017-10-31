@@ -1,23 +1,22 @@
 class Activity
 
-	attr_accessor :name, :exercises, :durations
+	attr_accessor :name, :activities, :durations
 
 	def initialize(name)
 		@name = name
-		@exercises = []
+		@activities = []
 		@durations = []
 	end
 
-	def add_exercise(exercise, duration)
-		exercises.push(exercise)
+	def add_exercise(activity, duration)
+		activities.push(activity)
 		durations.push(duration)
 	end
 
 	def total_calories_burned
 		total = 0
-		exercises.each_with_index do |exercise, i|
-			puts exercise.calories_burned(durations[i])
-			total += exercise.calories_burned(durations[i])
+		activities.each_with_index do |activity, i|
+			total += activity.calories_burned(durations[i])
 		end
 		total
 	end

@@ -59,10 +59,13 @@ tuesday.add_activity(workout)
 
 month1 = Month.new("January", monday.total_calories, 2000)
 
-puts "He gained #{month1.weight_gained} lbs in 1 month"
+month2 = Month.new("October", tuesday.total_calories, 2000)
 
-puts "Total daily calories: #{monday.total_calories}"
+puts "He gained #{month1.weight_gained} lbs in January without a workout"
+puts "He gained #{month2.weight_gained} lbs in October with a workout"
 
-puts "Did he meet his goal: #{monday.met_goal?}"
+puts "Total daily calories without a workout: #{monday.total_calories}"
+puts "Total daily calories with a workout: #{tuesday.total_calories}"
 
-puts "He burned #{workout.total_calories_burned} calories"
+puts "Did he meet his goal without a workout: #{monday.met_goal?}"
+puts "Did he meet his goal with a workout: #{tuesday.met_goal?}"

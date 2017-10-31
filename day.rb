@@ -23,7 +23,7 @@ class Day
 		meals.each do |meal|
 			total += meal.calories
 		end
-		exercises.each_with_index do |exercise, i|
+		exercises.each do |exercise|
 			total -= exercise.total_calories_burned
 		end
 
