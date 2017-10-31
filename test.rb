@@ -48,6 +48,15 @@ monday.add_meal(lunch)
 monday.add_meal(dinner)
 monday.add_meal(snacks)
 
+tuesday = Day.new("Tuesday", 2000)
+
+tuesday.add_meal(breakfast)
+tuesday.add_meal(lunch)
+tuesday.add_meal(dinner)
+tuesday.add_meal(snacks)
+
+tuesday.add_activity(workout)
+
 month1 = Month.new("January", monday.total_calories, 2000)
 
 puts "He gained #{month1.weight_gained} lbs in 1 month"
@@ -57,4 +66,3 @@ puts "Total daily calories: #{monday.total_calories}"
 puts "Did he meet his goal: #{monday.met_goal?}"
 
 puts "He burned #{workout.total_calories_burned} calories"
-
